@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+</head>
+<body>
+<div><h2><a href="/history">Обновить</a></h2></div>
+{% for part in data %}
+<p><b>{{ part.1 }} {{ part.2 }} {{ part.3 }} {{ part.4 }}</b></p>
+{% endfor %}
+</body>
+</html>
