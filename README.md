@@ -5,12 +5,12 @@ Docker-compose for api services for Bitcoin
 Works on Docker version 19.03.12
 
 <h1>before build</h1>
-
-Open the <b>.env</b> file and write your environment variables
-
-If you want to have a local database, just open <b>docker-compose.yml</b> file and uncomment the line
-<b>volumes</b>. The local database will be located at <b>./databases/my_db</b>
-
+<ul>
+<li>Open the <b>.env</b> file and write your environment variables</li>
+<li>If you want to have a local database, just open <b>docker-compose.yml</b> file and uncomment the line
+<b>volumes</b></li>
+<li>The local database will be located at <b>./databases/my_db</b></li>
+</ul>
 <h1>build with docker-compose</h1>
 <pre>docker-compose build</pre>
 
