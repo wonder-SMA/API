@@ -18,7 +18,7 @@ Works on Docker version 19.03.12
 <pre>docker-compose up</pre>
 <ul>
 <li>Open your browser and enter <b>127.0.0.1:5000/last</b> to get the latest data and <b>127.0.0.1:5000/history</b> to get all data</li>
-<li>if you have some database connection error, just run the following code:</li>
+<li>If you have some database connection error, just run the following code:</li>
 <pre>docker-compose stop</pre>
 <pre>docker-compose start</pre>
 </ul>
