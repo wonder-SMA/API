@@ -1,19 +1,20 @@
 import os
-from flask import render_template
-import pymysql
 from dotenv import load_dotenv
-from app import app
+import pymysql
+from flask import Flask, render_template
 
 load_dotenv()
+
+app = Flask(__name__)
 
 
 def database():
     connection = pymysql.connect(
-        host='localhost',
+        host='db',
         user='root',
         db='my_db',
         charset='utf8mb4',
-        password=str(os.getenv("PASSWORD")),
+        password=os.getenv("PASSWORD"),
         cursorclass=pymysql.cursors.DictCursor
     )
     sql = "SELECT * FROM coin ORDER BY date_time DESC"

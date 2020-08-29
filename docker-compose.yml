@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${PASSWORD}
+#    volumes:
+#      - ./databases:/var/lib/mysql
+
+  data_api:
+    build: ./data_api/app
+    environment:
+      - API_KEY=${API_KEY}
+      - TIME_OUT=${TIME_OUT}
+      - PASSWORD=${PASSWORD}
+    restart: always
+
+  service_api:
+    build: ./service_api/flask
+    environment:
+      - PASSWORD=${PASSWORD}
+    restart: always
+    ports:
+      - '5000:5000'

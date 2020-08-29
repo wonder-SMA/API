@@ -14,7 +14,7 @@ parameters = {
     'id': '1'}
 
 headers = {
-    'X-CMC_PRO_API_KEY': str(os.getenv("API_KEY")),
+    'X-CMC_PRO_API_KEY': os.getenv("API_KEY"),
     'Accepts': 'application/json'}
 
 session = requests.Session()
@@ -23,9 +23,9 @@ session.headers.update(headers)
 
 def database(name, price, circulating_supply):
     connection = pymysql.connect(
-        host='localhost',
+        host='db',
         user='root',
-        password=str(os.getenv("PASSWORD")),
+        password=os.getenv("PASSWORD"),
         charset='utf8mb4'
     )
     create_db = ("""CREATE DATABASE IF NOT EXISTS my_db; USE my_db; CREATE TABLE IF NOT EXISTS coin (
